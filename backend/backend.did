@@ -1,0 +1,14 @@
+type Document = 
+ record {
+   content: text;
+   id: text;
+   parentId: opt text;
+   title: text;
+ };
+service : {
+  createDocument: (text, text, opt text) -> (text);
+  getChildDocuments: (text) -> (vec Document) query;
+  getDocument: (text) -> (opt Document) query;
+  shareDocument: (text, text) -> (bool);
+  updateDocument: (text, text, text) -> (bool);
+}
